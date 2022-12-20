@@ -26,7 +26,7 @@ export const helper_check_channel = async (interaction: CommandInteraction): Pro
     if (guild?.members.me?.voice.channelId && VoiceChannel.id !== guild.members.me.voice.channelId) {
         await interaction.followUp({
             //@ts-ignore
-            content: `Already playing music in ${guild.me.voice.channelId}`,
+            content: `Already playing music in ${guild.members.me.voice.channel}`,
             ephemeral: true
         });
         return;
