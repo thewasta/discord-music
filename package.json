@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node .",
-    "prod": "node dist/bot.js"
+    "prod": "node dist/Bot.js"
   },
   "dependencies": {
     "@discordjs/opus": "^0.9.0",
