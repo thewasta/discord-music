@@ -15,6 +15,8 @@ export class BotClient extends Client {
             ]
         });
         this.distube = new DisTube(this, {
+            leaveOnFinish: true,
+            leaveOnEmpty: true,
             leaveOnStop: false,
             emitNewSongOnly: true,
             emitAddSongWhenCreatingQueue: false,
@@ -37,15 +39,6 @@ export class BotClient extends Client {
                 queue.textChannel.send(`Playing \`${song.name}\` - \`${song.formattedDuration}\`\nRequested by: ${
                     song.user
                 }\n`)
-                await self.user?.setPresence({
-                    status: "online",
-                    activities: [
-                        {
-                            name: song.name,
-                            type: ActivityType.Playing
-                        }
-                    ]
-                })
             }
         })
 
